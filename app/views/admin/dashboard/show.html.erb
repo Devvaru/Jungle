@@ -1,2 +1,23 @@
 <h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+
+<table class="table table-bordered">
+  <tr>
+    <td>
+    <%= link_to 'http://localhost:3000/admin/products' do %>
+      <p>Total Products in Database:</p>
+    <% end %>
+    </td>
+    <td>
+    <%= link_to 'http://localhost:3000/admin/products' do %>
+      <%= @products_count %>
+    <% end %>
+    </td>
+
+    <td>
+    <p>Number of Categories:</p>
+    </td>
+    <td>
+    <%= @categories_count %>
+    </td>
+  </tr>
+</table>
