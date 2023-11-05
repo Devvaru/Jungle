@@ -10,6 +10,14 @@ class User < ApplicationRecord
   private
 
   def normalize_email
-    self.email = email.downcase
+    self.email = email.strip.downcase
+  end
+
+  def self.authenticate_with_credentials(email, password)
+    normalized_email = email.strip.downcase
+    user = find_by(email: normalized_email)
+    return nil unless user
+
+    user.authenticate(password) ? user : nil
   end
 end
