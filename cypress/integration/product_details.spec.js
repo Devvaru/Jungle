@@ -15,6 +15,7 @@ describe('products page', () => {
   it("should go to the product when it is clicked", () => {
     // Asserts that a specific product can be visited 
     cy.visit('/products/46');
+
     // Assert that the product name is not null
     cy.get('h1').should('not.be.empty');
 
